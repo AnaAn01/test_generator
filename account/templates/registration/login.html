@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Login</h2>
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Login">
-</form>
-
-<a href="{% url 'dashboard' %}">Back to dashboard</a>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div style="background-color: #edf8ff; border: 1px solid #ccc; padding: 20px; text-align: center;">
+    <h2 style="margin-bottom: 1.5em;">Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Login" style="margin-left: 200px;">
+    </form>
+    <a href="{% url 'dashboard' %}">Back to dashboard</a>
+  </div>
+</div>
 {% endblock %}
